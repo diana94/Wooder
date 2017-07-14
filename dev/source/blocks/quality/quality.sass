@@ -7,6 +7,16 @@
         justify-content: space-between
         margin: 75px auto 0
 
+    &-item
+        position: relative
+
+        &:hover
+            .quality__img-box
+                border-color: transparent
+
+            .quality__img
+                box-shadow: 0 0 39px 15px #e1e1e1
+
     &__img-box
         position: relative
         +size(272px)
@@ -14,6 +24,7 @@
         border: 1px solid #e1e1e1
         border-radius: 50%
         overflow: hidden
+        transition: all .8s ease-out
 
         &::before
             content: ''
@@ -40,7 +51,10 @@
             text-indent: 5px
 
     &__img
+        border-radius: 50%
+        box-shadow: 0 0 0 0 transparent
         overflow: hidden
+        transition: all .8s ease-out
 
     &__name
         position: relative
@@ -54,6 +68,10 @@
             +size(25px, 1px)
             background-color: #bea67c
             transform: translate(-50%, 0)
+
+    &__link
+        +absolute(0, 0, 0, 0)
+        font-size: 0
 
     .common-paragraph__title
         text-align: center
