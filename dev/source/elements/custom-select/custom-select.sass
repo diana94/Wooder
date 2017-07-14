@@ -1,0 +1,62 @@
+.select-group
+    position: relative
+    height: 40px
+
+    .custom-select
+
+    .select-styled
+        +absolute($top: 0, $right: 0, $left: 0)
+        padding-right: 30px
+        color: rgba(255, 255, 255, .5)
+        font-size: 15px
+        font-weight: 700
+        text-transform: uppercase
+        text-align: right
+        cursor: pointer
+
+        &.active
+            &::after
+                transform: rotate(-180deg)
+
+        &::after
+            content: '\e5c5'
+            font-family: 'icomoon' !important
+            speak: none
+            font-style: normal
+            font-weight: normal
+            font-variant: normal
+            text-transform: none
+            line-height: 1
+            +absolute($top: -2px, $right: 0)
+            font-size: 24px
+            color: #bea67c
+            transition: all .3s ease-out
+
+    .select-options
+        +absolute($top: calc(100% + 20px), $right: 0, $left: 0)
+        z-index: 999
+        margin: 0
+        padding: 0
+        list-style: none
+        color: #bea67c
+        font-size: 15px
+        font-weight: 700
+        text-transform: uppercase
+        text-align: right
+
+        &.active
+            li
+                text-indent: 0
+
+        li
+            $delay: .2s
+
+            margin-top: 20px
+            cursor: pointer
+            text-indent: calc(100% + 50px)
+            transition: all .2s ease-out
+            +delay-nthchild($delay)
+            font-size: 16px;
+
+            &:first-child
+                margin-top: 0

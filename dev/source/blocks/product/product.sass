@@ -1,0 +1,90 @@
+.product
+    position: relative
+    padding: 90px 0 187px
+
+    &:first-child
+
+        .container
+            &::before
+                content: ''
+                +absolute($top: -117px, $right: 0)
+                height: 50px
+                width: 4px
+                background-color: #bea67c
+
+    &:nth-child(even)
+        .common-paragraph,
+        .product-img
+            float: right
+
+        .product__name
+            +absolute($top: 90px, $right: calc(100% - 363px))
+
+        .product__letter
+            +absolute($top: 0, $right: 0)
+
+        .product__num
+            +absolute($top: calc(100% - 30px), $right: 0)
+
+        .common-paragraph
+            padding: 115px 181px 0 48px
+            text-align: right
+
+        .common-paragraph__title::before,
+        .common-paragraph__text::before
+            right: initial
+            left: calc(100% + 29px)
+
+
+    &__letter
+        +absolute($top: 0, $left: 0)
+        transform: translate(0, -356px)
+        color: #bea67c
+        opacity: 0.07
+        font-size: 396px
+        font-weight: 700
+        text-transform: uppercase
+
+    &__num
+        +absolute($left: 0, $top: calc(100% - 30px))
+        height: 180px
+        font-weight: 700
+        font-size: 36px
+        text-transform: uppercase
+        color: #000000
+
+        &::before
+            counter-increment: section
+            content: '0' counter(section)
+
+        &::after
+            content: ''
+            +absolute($left: calc(50% - 2px), $bottom: 0)
+            width: 4px
+            height: 51px
+            background-color: #a9946e
+
+
+        span
+            color: #bea67c
+
+    &__name
+        +absolute($top: 90px, $left: calc(100% - 363px))
+        font-size: 169px
+        font-weight: 700
+        text-transform: uppercase
+        opacity: 0.2
+        color: #d0d0d0
+
+    &-img
+        float: left
+        width: 616px
+        box-shadow: 0 0 16px 4px rgba(0, 0, 0, .25)
+
+    .common-paragraph
+        width: calc(100% - 616px)
+        float: left
+        padding: 115px 48px 0 181px
+
+    .container
+        position: relative

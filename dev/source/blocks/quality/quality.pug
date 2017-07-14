@@ -1,0 +1,35 @@
+-
+    var qualityList = [
+        {
+            title: "Innovative Design",
+            imgUrl: "images/quality-1.png"
+        }, {
+            title: "High-level Skills",
+            imgUrl: "images/quality-2.png"
+        }, {
+            title: "Quality Products",
+            imgUrl: "images/quality-3.png"
+        }
+    ];
+ 
+section.quality
+    
+    .container
+        
+        h2.common-paragraph__title Wooder - is quality
+            
+        p.common-paragraph__text.
+            We create unique design objects made of rare wood, specially under the order. Look at the short video about our work.
+            
+        .quality-list
+            for quality in qualityList
+                .quality-item
+                    .quality__img-box
+                        .quality__img
+                            img(src = quality.imgUrl)
+                    
+                    p.quality__name= quality.title
+                    
+                    a.quality__link
+            
+                

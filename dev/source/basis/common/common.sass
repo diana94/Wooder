@@ -1,0 +1,64 @@
+*
+    box-sizing: border-box
+
+button,
+a
+    cursor: pointer
+html,
+body
+    font: normal 15px $font-montserrat
+    color: #000
+
+body
+    overflow-x: hidden
+
+.is-hidden
+    display: none !important
+
+.common-title
+    font-size: 48px
+    text-transform: uppercase
+    font-weight: 600
+    letter-spacing: 10px
+    color: #010101
+
+    &.m-light
+        color: #bea67c
+
+.common-paragraph
+    padding-left: 80px
+
+    &__title
+        position: relative
+        margin-left: 101px
+        margin-bottom: 25px
+        text-transform: uppercase
+        font-size: 48px
+        color: #010101
+
+        &::before
+            content: ''
+            +absolute($top: 28px, $right: calc(100% + 29px))
+            width: 151px
+            height: 1px
+            background-color: #000000
+
+    &__text
+        position: relative
+        font-size: 15px
+        font-weight: 400
+        color: #464646
+
+        &::before
+            content: ''
+            +absolute($top: 9px, $right: calc(100% + 29px))
+            width: 44px
+            height: 4px
+            background-color: #bea67c
+
+        .common-paragraph__title + &
+            margin-left: 101px
+
+    .decor-link
+        +inline-block
+        margin-top: 25px

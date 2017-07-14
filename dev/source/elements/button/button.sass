@@ -1,0 +1,55 @@
+.button
+    $btn-height: 53px
+    $btn-width: 306px
+    position: relative
+    width: $btn-width
+    height: $btn-height
+    padding: 18px 15px 16px
+    border: 2px solid #fff
+    background: transparent
+    text-align: center
+    color: #fff
+    text-transform: uppercase
+    font-size: 14px
+    font-weight: 600
+    letter-spacing: 3px
+    overflow: hidden
+    z-index: 9
+    transition: all .3s ease
+
+    $btn-color-hover: #fff
+
+    &:before,
+    &:after
+        content: ''
+        position: absolute
+        width: 0
+        height: 0
+        border: 0 solid
+        transform: rotate(360deg)
+        transition: all .3s ease-in-out
+        z-index: -1
+
+    &:before
+        bottom: 0
+        left: 0
+        border-color: transparent transparent transparent $btn-color-hover
+
+    &:after
+        top: 0
+        right: 0
+        border-color: transparent $btn-color-hover transparent transparent
+
+    &:hover
+        color: #bea67c
+
+        &:before,
+        &:after
+            border-width: $btn-height $btn-width*1.1
+
+.simple-button
+    border: 0
+    outline: none
+    width: auto
+    height: auto
+    background-color: transparent

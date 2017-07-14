@@ -1,0 +1,33 @@
+.header
+    +clearfix()
+    position: relative
+    padding-top: 30px
+
+    $absolute-top: 43px
+    $absolute-side: 25px
+
+    &-setting
+        +absolute($right: $absolute-side, $top: $absolute-top)
+
+        [class*='icon']
+            float: left
+            margin-right: 40px
+            color: rgba(255, 255, 255, .5)
+            font-size: 24px
+
+    .container
+        padding-left: 350px
+
+    .menu
+        +absolute($top: $absolute-top, $left: $absolute-side)
+
+    .logo
+        float: left
+
+    .nav
+        float: left
+        margin-left: 100px
+
+    .select-group
+        float: left
+        width: 60px

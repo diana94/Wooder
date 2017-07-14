@@ -1,0 +1,33 @@
+=absolute($top: initial, $left: initial, $bottom: initial, $right: initial)
+    position: absolute
+    top: $top
+    bottom: $bottom
+    left: $left
+    right: $right
+
+=absolute-top-center($height, $left: 0, $right: 0)
+    position: absolute
+    top: 50%
+    left: $left
+    right: $right
+    height: $height
+    margin-top: -$height/2
+
+=inline-block($vertical-align: top)
+    display: inline-block
+    vertical-align: $vertical-align
+
+=delay-nthchild($delay, $childCounts: 15, $class: '&')
+    @for $i from 0 through $childCounts
+        #{$class}:nth-child(#{$i})
+            transition-delay: $i * $delay
+
+=clearfix()
+    &:after
+        content: ""
+        display: table
+        clear: both
+
+=size($width, $height: $width)
+    width: $width
+    height: $height

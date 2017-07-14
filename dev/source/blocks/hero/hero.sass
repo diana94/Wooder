@@ -1,0 +1,85 @@
+.hero
+    position: relative
+    background: url('../images/hero-bg.png') center top no-repeat
+    background-size: cover
+    overflow: hidden
+
+    &-content
+        position: relative
+        padding: 275px 0 217px 350px
+
+    &__num
+        font-size: 80px
+        font-weight: 700
+        text-transform: uppercase
+        color: #bea67c
+        writing-mode: vertical-rl
+
+        &::after
+            content: ''
+            +absolute($top: 0, $left: 50%)
+            height: 51px
+            width: 4px
+            margin-top: -75px
+            margin-left: -2px
+            background: #bea67c
+
+    &__aside
+        +absolute($top: 300px, $left: 0)
+
+    &__button
+        margin-top: 55px
+
+    &__dscr
+        +absolute($top: 320px, $right: 0)
+        color: #bea67c
+        opacity: 0.2
+        font-size: 24px
+        font-weight: 700
+        writing-mode: vertical-rl
+
+    &-next
+        position: relative
+        margin-top: 65px
+        padding-bottom: 56px
+        color: rgba(255, 255, 255, .1)
+        font-size: 14px
+        text-transform: uppercase
+        font-weight: 600
+        writing-mode:  vertical-rl
+        cursor: pointer
+
+        &:after
+            content: 'scroll'
+            +absolute($bottom: 60px, $top: 140px)
+            overflow: hidden
+            transition: all .3s ease
+
+        &:hover
+            &:after
+                bottom: 0
+
+        [class*='icon']
+            +inline-block()
+            margin-bottom: 20px
+            color: #fff
+            font-size: 22px
+
+        .icon-arrow-down2
+            position: relative
+            padding-top: 60px
+
+            &:after
+                content: ''
+                +absolute($right: 50%, $top: 4px)
+                height: 60px
+                width: 2px
+                margin-right: -1px
+                background-color: #fff
+
+    .common-title
+        font-size: 100px
+        letter-spacing: 19pxe
+
+    .share
+        +absolute($right: 32px, $bottom: 70px)

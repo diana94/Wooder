@@ -1,0 +1,19 @@
+.menu
+    &__item
+        $delay: .2s
+        display: block
+        margin-top: 40px
+        font-size: 18px
+        font-weight: 600
+        color: #bea67c
+        transition: all .3s ease-out
+        text-indent: -150px
+
+        +delay-nthchild($delay)
+
+    &__list
+        margin-top: 50px
+
+        &.open
+            .menu__item
+                text-indent: 0

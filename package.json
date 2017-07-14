@@ -1,0 +1,22 @@
+{
+  "name": "Jade",
+  "private": true,
+  "version": "0.0.0",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-clean-css": "^3.4.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-minify": "^1.0.0",
+    "gulp-pug": "^3.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "pug": "^2.0.0-rc.2"
+  },
+  "dependencies": {
+    "chalk": "^0.5.1"
+  }
+}

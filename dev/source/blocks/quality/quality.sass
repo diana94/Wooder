@@ -1,0 +1,72 @@
+.quality
+    padding: 70px 0 150px
+
+    &-list
+        max-width: 966px
+        display: flex
+        justify-content: space-between
+        margin: 75px auto 0
+
+    &__img-box
+        position: relative
+        +size(272px)
+        padding: 14px
+        border: 1px solid #e1e1e1
+        border-radius: 50%
+        overflow: hidden
+
+        &::before
+            content: ''
+            +absolute(50%, 50%)
+            +size(68px)
+            background-color: #bea67c
+            opacity: 0.8
+            transform: translate(-50%, -50%)
+            border-radius: 50%
+
+        &::after
+            content: '\e904'
+            +absolute(50%, 50%)
+            font-size: 38px
+            color: #fff
+            transform: translate(-50%, -50%)
+            font-family: 'icomoon' !important
+            speak: none
+            font-style: normal
+            font-weight: normal
+            font-variant: normal
+            text-transform: none
+            line-height: 1
+            text-indent: 5px
+
+    &__img
+        overflow: hidden
+
+    &__name
+        position: relative
+        margin-top: 40px
+        font-size: 16px
+        text-align: center
+
+        &::before
+            content: ''
+            +absolute($top: -15px, $left: 50%)
+            +size(25px, 1px)
+            background-color: #bea67c
+            transform: translate(-50%, 0)
+
+    .common-paragraph__title
+        text-align: center
+
+        &::before
+            content: none
+
+    .common-paragraph__text
+        max-width: 545px
+        margin: 50px auto 0
+        padding: 0 15px
+        text-align: center
+
+        &::before
+            +absolute($top: -20px, $left: 50%)
+            transform: translate(50%, 0)
