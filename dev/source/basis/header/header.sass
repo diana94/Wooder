@@ -1,10 +1,25 @@
 .header
     +clearfix()
-    position: relative
-    padding-top: 30px
+    +fixed($left: 0, $right: 0)
+    z-index: 99
+    padding: 30px 0 15px
+    transition: all .2s ease-out
+
+    &.is-active
+        padding-top: 18px
+        background-color: #010101
+
+        .menu,
+        .header-setting
+            top: 31px
 
     $absolute-top: 43px
     $absolute-side: 25px
+
+    &__info
+        &:hover
+            [class*=icon]
+                color: #bea67c
 
     &-setting
         +absolute($right: $absolute-side, $top: $absolute-top)
@@ -15,11 +30,15 @@
             color: rgba(255, 255, 255, .5)
             font-size: 24px
 
-    .container
-        padding-left: 350px
-
     .menu
         +absolute($top: $absolute-top, $left: $absolute-side)
+
+    &-settings,
+    .menu
+        transition: all .2s ease-out
+
+    .container
+        padding-left: 350px
 
     .logo
         float: left

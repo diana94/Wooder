@@ -2,18 +2,22 @@
     &__item
         $delay: .2s
         display: block
+        width: 0
         margin-top: 40px
+        margin-left: -150px
         font-size: 18px
         font-weight: 600
         color: #bea67c
         transition: all .3s ease-out
-        text-indent: -150px
 
         +delay-nthchild($delay)
 
     &__list
+        position: relative
         margin-top: 50px
+        z-index: 9
 
         &.open
             .menu__item
-                text-indent: 0
+                width: auto
+                margin-left: 0

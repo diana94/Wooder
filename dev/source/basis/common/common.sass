@@ -36,12 +36,17 @@ body
         font-size: 48px
         color: #010101
 
+        &.scroll-active
+            &::before
+                width: 151px
+
         &::before
             content: ''
             +absolute($top: 28px, $right: calc(100% + 29px))
-            width: 151px
+            width: 0
             height: 1px
             background-color: #000000
+            transition: all .4s linear
 
     &__text
         position: relative
@@ -49,12 +54,17 @@ body
         font-weight: 400
         color: #464646
 
+        &.scroll-active
+            &::before
+                width: 44px
+
         &::before
             content: ''
             +absolute($top: 9px, $right: calc(100% + 29px))
-            width: 44px
+            width: 0
             height: 4px
             background-color: #bea67c
+            transition: all .4s linear
 
         .common-paragraph__title + &
             margin-left: 101px

@@ -2,13 +2,16 @@
     var qualityList = [
         {
             title: "Innovative Design",
-            imgUrl: "images/quality-1.png"
+            imgUrl: "images/quality-1.png",
+            altText: "table with innivative design"
         }, {
             title: "High-level Skills",
-            imgUrl: "images/quality-2.png"
+            imgUrl: "images/quality-2.png",
+            altText: "chair with unusual design"
         }, {
             title: "Quality Products",
-            imgUrl: "images/quality-3.png"
+            imgUrl: "images/quality-3.png",
+            altText: "wood box"
         }
     ];
  
@@ -26,7 +29,7 @@ section.quality
                 .quality-item
                     .quality__img-box
                         .quality__img
-                            img(src = quality.imgUrl)
+                            img(src = quality.imgUrl, alt= quality.altText)
                     
                     p.quality__name= quality.title
                     

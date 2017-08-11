@@ -42,6 +42,9 @@
 .icon-info:before {
   content: "\e88f";
 }
+.icon-play-circle:before {
+  content: "\ea15";
+}
 .icon-facebook:before {
   content: "\ea90";
 }

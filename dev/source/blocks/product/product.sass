@@ -18,10 +18,17 @@
             float: right
 
         .product__name
-            +absolute($top: 90px, $right: calc(100% - 363px))
+            +absolute($top: 90px, $right: 200%)
+
+            &.scroll-active
+                right: calc(100% - 363px)
 
         .product__letter
             +absolute($top: 0, $right: 0)
+            transform: translate(200%, -356px)
+
+            &.scroll-active
+                transform: translate(0, -356px)
 
         .product__num
             +absolute($top: calc(100% - 30px), $right: 0)
@@ -38,12 +45,16 @@
 
     &__letter
         +absolute($top: 0, $left: 0)
-        transform: translate(0, -356px)
+        transform: translate(-200%, -356px)
         color: #bea67c
         opacity: 0.07
         font-size: 396px
         font-weight: 700
         text-transform: uppercase
+        transition: all .6s linear
+
+        &.scroll-active
+            transform: translate(0, -356px)
 
     &__num
         +absolute($left: 0, $top: calc(100% - 30px))
@@ -69,12 +80,16 @@
             color: #bea67c
 
     &__name
-        +absolute($top: 90px, $left: calc(100% - 363px))
+        +absolute($top: 90px, $left: 200%)
         font-size: 169px
         font-weight: 700
         text-transform: uppercase
         opacity: 0.2
         color: #d0d0d0
+        transition: all 1s linear
+
+        &.scroll-active
+            left: calc(100% - 363px)
 
     &-img
         float: left

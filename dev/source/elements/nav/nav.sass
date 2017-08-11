@@ -8,6 +8,10 @@
         font-weight: 600
         text-transform: uppercase
 
+        &.is-active
+            &:before
+                width: 100%
+
         &:before
             content: ''
             +absolute($left: 0, $bottom: -2px)

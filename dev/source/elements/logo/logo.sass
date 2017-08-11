@@ -7,11 +7,17 @@
     letter-spacing: $letter-sapcing
     font-weight: 600
 
+    &.scroll-active
+        span::before
+            right: 0
+
     span
         position: relative
 
         &::before
             +absolute-top-center(4px)
+            right: 100%
             content: ''
             margin-right: $letter-sapcing
             background-color: #bea67c
+            transition: all .4s linear

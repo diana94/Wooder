@@ -6,7 +6,7 @@
 
     &-content
         position: relative
-        padding: 275px 0 217px 350px
+        padding: 349px 0 217px 350px
 
     &__num
         font-size: 80px
@@ -28,6 +28,7 @@
         +absolute($top: 300px, $left: 0)
 
     &__button
+        display: block
         margin-top: 55px
 
     &__dscr
@@ -40,20 +41,28 @@
 
     &-next
         position: relative
+        width: 22px
         margin-top: 65px
+        padding-left: 0
+        padding-right: 0
         padding-bottom: 56px
         color: rgba(255, 255, 255, .1)
+        background: transparent
+        border: 0
         font-size: 14px
         text-transform: uppercase
         font-weight: 600
-        writing-mode:  vertical-rl
         cursor: pointer
 
         &:after
             content: 'scroll'
-            +absolute($bottom: 60px, $top: 140px)
+            +absolute(144px, 3px, 61px )
             overflow: hidden
             transition: all .3s ease
+            writing-mode:  vertical-rl
+
+        &:focus
+            outline: none
 
         &:hover
             &:after

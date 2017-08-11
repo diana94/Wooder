@@ -1,0 +1,41 @@
+.video
+    padding: 90px 0
+    background: url('../images/video.jpg') no-repeat
+    background-size: cover
+
+    .container
+        position: relative
+        padding: 216px 0 183px 210px
+        border: 1px solid #bea67c
+
+        &::before
+            content: ''
+            +size(1px, 151px)
+            +absolute($top: 50%, $right: 101px)
+            background: #fff
+            transform: translate(0, -50%)
+
+    .common-paragraph__title
+        max-width: 520px
+        color: #bea67c
+
+        &::before
+            background-color: #fff
+
+    .common-paragraph__text
+        max-width: 430px
+        color: #fff
+
+    .product__letter
+        left: initial
+        right: 0
+        transform: translate(0,-280px);
+        z-index: -9
+
+    .button
+        margin: 44px 0 0 101px
+
+        [class*='icon-']
+            display: inline-block
+            margin-right: 10px
+            font-size: 24px
