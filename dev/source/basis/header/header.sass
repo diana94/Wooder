@@ -40,12 +40,18 @@
     .container
         padding-left: 350px
 
+        @media #{$L}
+            padding-left: 250px
+
     .logo
         float: left
 
     .nav
         float: left
         margin-left: 100px
+
+        @media #{$L}
+            display: none
 
     .select-group
         float: left
