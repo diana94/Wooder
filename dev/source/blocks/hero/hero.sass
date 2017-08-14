@@ -6,10 +6,13 @@
 
     &-content
         position: relative
-        padding: 349px 0 217px 350px
+        padding: 350px 0 217px 350px
 
         @media #{$L}
-            padding-left: 250px
+            padding: 300px 0 140px 250px
+
+        @media #{$M}
+            padding-left: 170px
 
     &__num
         font-size: 80px
@@ -17,6 +20,9 @@
         text-transform: uppercase
         color: #bea67c
         writing-mode: vertical-rl
+
+        @media #{$M}
+            font-size: 50px
 
         &::after
             content: ''
@@ -91,7 +97,10 @@
 
     .common-title
         font-size: 100px
-        letter-spacing: 19pxe
+        letter-spacing: 19px
+
+        @media #{$M}
+            font-size: 60px
 
     .share
         +absolute($right: 32px, $bottom: 70px)

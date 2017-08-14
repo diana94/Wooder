@@ -3,10 +3,13 @@
     background: url('../images/video.jpg') no-repeat
     background-size: cover
 
-    .container
+    &-content
         position: relative
         padding: 216px 0 183px 210px
         border: 1px solid #bea67c
+
+        @media #{$L}
+            padding-left: 110px
 
         &::before
             content: ''
@@ -14,6 +17,9 @@
             +absolute($top: 50%, $right: 101px)
             background: #fff
             transform: translate(0, -50%)
+
+            @media #{$L}
+                right: 70px
 
     .common-paragraph__title
         max-width: 520px

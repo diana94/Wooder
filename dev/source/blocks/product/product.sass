@@ -17,6 +17,18 @@
         .product-img
             float: right
 
+        .common-paragraph
+            .decor-link
+                margin-right: 101px
+
+        .common-paragraph__title
+            margin-left: 0
+            margin-right: 101px
+
+        .common-paragraph__text
+            margin-left: 0
+            margin-right: 101px
+
         .product__name
             +absolute($top: 90px, $right: 200%)
 
@@ -104,6 +116,12 @@
         width: 50%
         float: left
         padding: 115px 48px 0 181px
+
+        @media #{$L}
+            padding-left: 81px
+
+        .decor-link
+            margin-left: 101px
 
     .container
         position: relative
