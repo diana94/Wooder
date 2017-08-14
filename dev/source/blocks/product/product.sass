@@ -2,6 +2,10 @@
     position: relative
     padding: 90px 0 187px
 
+    @media #{$M}
+        padding-top: 0
+        padding-bottom: 0
+
     &:first-child
 
         .container
@@ -12,10 +16,19 @@
                 width: 4px
                 background-color: #bea67c
 
-    &:nth-child(even)
+    &.m-reverse
         .common-paragraph,
         .product-img
             float: right
+
+        .product-img
+            @media #{$M}
+                float: left
+
+            &::before
+                right: initial
+                left: 0
+                transform: translate(-50%,-50%)
 
         .common-paragraph
             .decor-link
@@ -43,7 +56,7 @@
                 transform: translate(0, -356px)
 
         .product__num
-            +absolute($top: calc(100% - 30px), $right: 0)
+            +absolute($top: calc(100% - 30px), $right: 15px)
 
         .common-paragraph
             padding: 115px 181px 0 48px
@@ -56,7 +69,6 @@
         .common-paragraph__text::before
             right: initial
             left: calc(100% + 29px)
-
 
     &__letter
         +absolute($top: 0, $left: 0)
@@ -72,7 +84,7 @@
             transform: translate(0, -356px)
 
     &__num
-        +absolute($left: 0, $top: calc(100% - 30px))
+        +absolute($left: 15px, $top: calc(100% - 30px))
         height: 180px
         font-weight: 700
         font-size: 36px
@@ -107,10 +119,25 @@
             left: calc(100% - 363px)
 
     &-img
+        position: relative
         float: left
         width: 50%
         max-width: 616px
         box-shadow: 0 0 16px 4px rgba(0, 0, 0, .25)
+
+        @media #{$M}
+            margin-top: 50px
+            float: right
+
+        &:before
+            content: attr(data-decor)
+            +absolute(50%, $right: 0)
+            transform: translate(50%, -50%)
+            font-size: 169px
+            font-weight: bold
+            opacity: .2
+            color: #d0d0d0
+            transition: all 1s linear
 
     .common-paragraph
         width: 50%
@@ -119,6 +146,10 @@
 
         @media #{$L}
             padding-left: 81px
+
+        @media #{$M}
+            width: 100%
+            padding-top: 65px
 
         .decor-link
             margin-left: 101px

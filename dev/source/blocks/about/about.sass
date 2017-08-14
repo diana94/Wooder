@@ -1,33 +1,24 @@
 .about
     padding: 130px 0 124px
 
-    .product-img
-        float: left
-        max-width: 588px
-
-    .common-paragraph
-        float: left
-        max-width: 512px
-        margin-top: 90px
-        margin-left: -83px
-
-    .product__name
-        left: initial
-        right: 200%
-
-        &.scroll-active
-            right: calc(100% - 363px)
-
-    .product__letter
-        left: initial
-        right: 0
-        transform: translate(200%,-356px)
-
-        &.scroll-active
-            transform: translate(0,-356px)
-
-    .decor-link
-        margin-left: 101px
-
     .container
         position: relative
+
+    .product
+
+        .common-paragraph
+            padding-left: 0
+            text-align: left
+
+        .common-paragraph__text,
+        .common-paragraph__title
+            margin-left: 101px
+            margin-right: 0
+
+            &::before
+                z-index: 9
+                left: initial
+                right: calc(100% + 29px)
+
+        .decor-link
+            margin-right: 0
