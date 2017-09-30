@@ -4,7 +4,8 @@
     position: relative
     width: $btn-width
     height: $btn-height
-    padding: 18px 15px 16px
+    padding-right: 15px
+    padding-left: 15px
     border: 2px solid #fff
     background: transparent
     text-align: center
@@ -13,13 +14,18 @@
     font-size: 14px
     font-weight: 600
     letter-spacing: 3px
+    line-height: 40px
     overflow: hidden
     z-index: 9
     transition: all .3s ease
 
-    &.button-icon
-        padding: 13px 15px 13px
+    @media #{$S}
+        $btn-width: 246px
+        $btn-height: 44px
+        width: $btn-width
+        height: $btn-height
 
+    &.button-icon
         *
             vertical-align: middle
 
@@ -38,12 +44,12 @@
 
     &:before
         bottom: 0
-        left: 0
+        left: -5px
         border-color: transparent transparent transparent $btn-color-hover
 
     &:after
         top: 0
-        right: 0
+        right: -5px
         border-color: transparent $btn-color-hover transparent transparent
 
     &:hover
@@ -51,7 +57,7 @@
 
         &:before,
         &:after
-            border-width: $btn-height $btn-width*1.1
+            border-width: $btn-height $btn-width*1.5
 
 .simple-button
     border: 0

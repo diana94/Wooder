@@ -1,24 +1,46 @@
 .about
-    padding: 130px 0 124px
 
     .container
         position: relative
 
     .product
+        padding: 130px 0 120px
+
+        @media #{$M}
+            padding-top: 0
+            padding-bottom: 84px
 
         .common-paragraph
             padding-left: 0
             text-align: left
 
-        .common-paragraph__text,
-        .common-paragraph__title
-            margin-left: 101px
-            margin-right: 0
+            @media #{$M}
+                padding-top: 70px
+                padding-left: 48px
+                text-align: right
 
-            &::before
-                z-index: 9
-                left: initial
-                right: calc(100% + 29px)
+            @media #{$XS}
+                padding-left: 0
+                padding-right: 0px
 
-        .decor-link
-            margin-right: 0
+            &__text,
+            &__title
+                margin-left: 101px
+                margin-right: 0
+
+                @media #{$M}
+                    margin-left: 0
+                    margin-right: 101px
+
+                &::before
+                    z-index: 9
+                    left: initial
+                    right: calc(100% + 29px)
+
+                    @media #{$M}
+                        right: initial
+                        left: calc(100% + 29px)
+
+            .decor-link
+                margin-left: 101px
+                margin-right: 0

@@ -1,6 +1,6 @@
 .header
     +clearfix()
-    +fixed($left: 0, $right: 0)
+    +fixed(0,$left: 0, $right: 0)
     z-index: 99
     padding: 30px 0 15px
     transition: all .2s ease-out
@@ -17,18 +17,20 @@
     $absolute-side: 25px
 
     &__info
+        float: left
+        margin-top: -2px
+
+        [class*='icon']
+            margin-right: 40px
+            color: rgba(255, 255, 255, .5)
+            font-size: 24px
+
         &:hover
             [class*=icon]
                 color: #bea67c
 
     &-setting
         +absolute($right: $absolute-side, $top: $absolute-top)
-
-        [class*='icon']
-            float: left
-            margin-right: 40px
-            color: rgba(255, 255, 255, .5)
-            font-size: 24px
 
     .menu
         +absolute($top: $absolute-top, $left: $absolute-side)
@@ -47,6 +49,13 @@
             padding-left: 185px
     .logo
         float: left
+
+        @media #{$S}
+            margin-top: 10px
+            font-size: 22px
+
+        @media #{$XS}
+            display: none
 
     .nav
         float: left

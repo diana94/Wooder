@@ -22,6 +22,12 @@ body
     letter-spacing: 10px
     color: #010101
 
+    @media #{$M}
+        font-size: 30px
+
+    @media #{$XS}
+        font-size: 22px
+
     &.m-light
         color: #bea67c
 
@@ -36,17 +42,33 @@ body
         font-size: 48px
         color: #010101
 
+        @media #{$M}
+            font-size: 30px
+
+        @media #{$XS}
+            margin-left: 75px
+            font-size: 22px
+
         &.scroll-active
             &::before
                 width: 151px
 
+                @media #{$M}
+                    width: 100px
+
+                @media #{$XS}
+                    width: 50px
+
         &::before
             content: ''
-            +absolute($top: 28px, $right: calc(100% + 29px))
+            +absolute($top: 50%, $right: calc(100% + 29px))
             width: 0
             height: 1px
             background-color: #000000
             transition: all .4s linear
+
+            @media #{$XS}
+                right: calc(100% + 15px)
 
     &__text
         position: relative
@@ -58,6 +80,9 @@ body
             &::before
                 width: 44px
 
+                @media #{$XS}
+                    width: 30px
+
         &::before
             content: ''
             +absolute($top: 9px, $right: calc(100% + 29px))
@@ -66,8 +91,14 @@ body
             background-color: #bea67c
             transition: all .4s linear
 
+            @media #{$XS}
+                right: calc(100% + 15px)
+
         .common-paragraph__title + &
             margin-left: 101px
+
+            @media #{$XS}
+                margin-left: 75px
 
     .decor-link
         +inline-block

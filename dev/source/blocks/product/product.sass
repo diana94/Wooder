@@ -1,6 +1,7 @@
 .product
     position: relative
     padding: 90px 0 187px
+    +clearfix()
 
     @media #{$M}
         padding-top: 0
@@ -15,6 +16,9 @@
                 height: 50px
                 width: 4px
                 background-color: #bea67c
+
+                @media #{$L}
+                    display: none
 
     &.m-reverse
         .common-paragraph,
@@ -31,16 +35,34 @@
                 transform: translate(-50%,-50%)
 
         .common-paragraph
+            padding-right: 181px
+            padding-left: 48px
+            text-align: right
+
+            @media #{$L}
+                padding-right: 81px
+
+            @media #{$XS}
+                padding-right: 0
+                padding-left: 0
+
             .decor-link
+                margin-left: 0
                 margin-right: 101px
 
         .common-paragraph__title
             margin-left: 0
             margin-right: 101px
 
+            @media #{$XS}
+                margin-right: 75px
+
         .common-paragraph__text
             margin-left: 0
             margin-right: 101px
+
+            @media #{$XS}
+                margin-right: 75px
 
         .product__name
             +absolute($top: 90px, $right: 200%)
@@ -58,17 +80,13 @@
         .product__num
             +absolute($top: calc(100% - 30px), $right: 15px)
 
-        .common-paragraph
-            padding: 115px 181px 0 48px
-            text-align: right
-
-            @media #{$L}
-                padding-right: 81px
-
         .common-paragraph__title::before,
         .common-paragraph__text::before
             right: initial
             left: calc(100% + 29px)
+
+            @media #{$XS}
+                left: calc(100% + 15px)
 
     &__letter
         +absolute($top: 0, $left: 0)
@@ -80,6 +98,9 @@
         text-transform: uppercase
         transition: all .6s linear
 
+        @media #{$M}
+            display: none
+
         &.scroll-active
             transform: translate(0, -356px)
 
@@ -90,6 +111,13 @@
         font-size: 36px
         text-transform: uppercase
         color: #000000
+
+        @media #{$S}
+            top: calc(100%)
+            transform: translateY(-100%)
+
+        @media #{$XS}
+            display: none
 
         &::before
             counter-increment: section
@@ -129,6 +157,13 @@
             margin-top: 50px
             float: right
 
+        @media #{$S}
+            max-width: 100%
+            width: calc(100% - 140px)
+
+        @media #{$XS}
+            width: 100%
+
         &:before
             content: attr(data-decor)
             +absolute(50%, $right: 0)
@@ -138,6 +173,12 @@
             opacity: .2
             color: #d0d0d0
             transition: all 1s linear
+
+            @media #{$M}
+                transform: translate(65%, -50%)
+
+            @media #{$XS}
+                display: none
 
     .common-paragraph
         width: 50%
@@ -150,6 +191,13 @@
         @media #{$M}
             width: 100%
             padding-top: 65px
+
+        @media #{$S}
+            padding-top: 55px
+
+        @media #{$XS}
+            padding-left: 0
+            padding-right: 0
 
         .decor-link
             margin-left: 101px

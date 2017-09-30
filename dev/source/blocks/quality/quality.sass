@@ -1,6 +1,13 @@
 .quality
     padding: 70px 0 150px
 
+    @media #{$S}
+        padding-bottom: 100px
+
+    @media #{$XS}
+        padding-top: 40px
+        padding-bottom: 70px
+
     &-list
         max-width: 966px
         display: flex
@@ -11,12 +18,18 @@
             flex-direction: column
             align-items: center
 
+        @media #{$XS}
+            margin-top: 50px
+
     &-item
         position: relative
 
         & + .quality-item
             @media #{$M}
                 margin-top: 50px
+
+            @media #{$XS}
+                margin-top: 40px
 
         &:hover
             .quality__img-box
@@ -33,6 +46,9 @@
         border-radius: 50%
         overflow: hidden
         transition: all .8s ease-out
+
+        @media #{$XS}
+            +size(210px)
 
         &::before
             content: ''

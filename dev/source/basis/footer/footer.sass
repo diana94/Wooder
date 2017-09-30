@@ -6,12 +6,28 @@
     font-size: 15px
     color: #464646
 
-    &-logo
-        +absolute($top: 20px, $left: 50%)
-        transform: translate(-50%, 0)
+    @media #{$S}
+        padding: 25px 0 20px
+        text-align: center
+
+    &-logo.logo
+        +absolute($top: 50%, $left: 50%)
+        transform: translate(-50%, -50%)
+
+        @media #{$M}
+            font-size: 22px
+
+        @media #{$S}
+            position: static
+            transform: translate(0)
 
     &__author
         float: right
+
+        @media #{$S}
+            float: none
+            margin-top: 10px
+
 
         span
             color: #7d7d7d
@@ -19,3 +35,7 @@
     .copyright
         float: left
         text-transform: uppercase
+
+        @media #{$S}
+            float: none
+            margin-top: 10px
