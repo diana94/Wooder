@@ -27,7 +27,7 @@ gulp.task('json-data', function() {
 
 //sass
 gulp.task('sass', function () {
-    return gulp.src('./dev/source/style.sass')
+    return gulp.src('./dev/source/*.sass')
         .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(sourcemaps.write())
@@ -37,14 +37,14 @@ gulp.task('sass', function () {
 
 //css concat
 gulp.task('css-concat', function() {
-  return gulp.src(['./dev/source/cosmetic/*.css','./dev/source/cosmetic/**/*.css' ])
+  return gulp.src(['./dev/source/cosmetic/*.css','./dev/source/cosmetic/**/*.css','!./dev/source/cosmetic/first.css' ])
     .pipe(concat('style.css'))
     .pipe(gulp.dest('./dev/bundle/style'));
 });
 
 //css minify
 gulp.task('css-compress', function () {
-    gulp.src('dev/bundle/style/style.css')
+    gulp.src(['dev/bundle/style/style.css','./dev/source/cosmetic/first.css'])
         .pipe(cssmin())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('dev/bundle/style/'));
