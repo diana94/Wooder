@@ -1,38 +1,20 @@
--
-    var qualityList = [
-        {
-            title: "Innovative Design",
-            imgUrl: "images/quality-1.png",
-            altText: "table with innivative design"
-        }, {
-            title: "High-level Skills",
-            imgUrl: "images/quality-2.png",
-            altText: "chair with unusual design"
-        }, {
-            title: "Quality Products",
-            imgUrl: "images/quality-3.png",
-            altText: "wood box"
-        }
-    ];
- 
 section.quality
     
     .container
         
-        h2.common-paragraph__title Wooder - is quality
+        h2.common-paragraph__title=quality.title
             
-        p.common-paragraph__text.
-            We create unique design objects made of rare wood, specially under the order. Look at the short video about our work.
+        p.common-paragraph__text=quality.text
             
         .quality-list
-            for quality in qualityList
+            each item in quality.list
                 .quality-item
                     .quality__img-box
                         .quality__img
-                            img(src = quality.imgUrl, alt= quality.altText)
+                            img(src = item.imgUrl, alt= item.altText)
                     
-                    p.quality__name= quality.title
+                    p.quality__name=item.title
                     
-                    a.quality__link(href='#')= quality.title
+                    a.quality__link(href='#')=item.title
             
                 

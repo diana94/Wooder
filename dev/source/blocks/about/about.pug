@@ -3,15 +3,14 @@ section.about
         
         .product.m-reverse
             
-            p.product__letter A
+            p.product__letter=about.letter
             
             .common-paragraph
-                h2.common-paragraph__title About us
+                h2.common-paragraph__title=about.title
                 
-                p.common-paragraph__text.
-                    We are a team of professionals in the wood processing and the creation of wooden furniture of the highest class
+                p.common-paragraph__text=about.text
                 
-                a.decor-link Learn more
+                a.decor-link=page.button
         
             .product-img(data-decor="About")
                 img(src="images/about.jpg", alt="official men")

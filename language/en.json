@@ -1,0 +1,52 @@
+{
+    "page": {
+        "button": "Learn more"
+    },
+    "hero": {
+        "title": "Wooder",
+        "dscr": "Furniture & decor",
+        "num": "01"
+    },
+    "about": {
+        "title": "About us",
+        "text": "We are a team of professionals in the wood processing and the creation of wooden furniture of the highest class",
+        "letter": "A"
+    },
+    "decor": {
+        "title": "Decor",
+        "text": "We make all types of wooden decor as per design given by Architect,Interior designer, contractor which is suitable your premises.",
+        "letter": "D"
+    },
+    "furniture": {
+        "title": "Furniture",
+        "text": "Wooder utilizes materials otherwise left behind, rendered useless in their original intent. By creating new pieces made of reclaimed barnwood",
+        "num": "01",
+        "letter": "F"
+    },
+    "quality": {
+        "title": "wooder – is quality",
+        "text": "We create unique design objects made of rare wood, specially under the order. Look at the short video about our work.",
+        "list": [
+            {
+                "title":"Innovative Design",
+                "imgUrl": "images/quality-1.png",
+                "altText": "table with innivative design"
+            },
+            {
+                "title":"High-level Skills",
+                "imgUrl": "images/quality-2.png",
+                "altText": "chair with unusual design"
+            },
+            {
+                "title":"Quality Products",
+                "imgUrl": "images/quality-3.png",
+                "altText": "wood box"
+            }
+        ]
+    },
+    "video": {
+        "title": "we Do the design of any complexity",
+        "text": "This is a team of professionals that make the furniture and wood décor high standard. Creating modern designs. Adhering to the global quality standards. And we are doing work with love.",
+        "letter": "V"
+    }
+}

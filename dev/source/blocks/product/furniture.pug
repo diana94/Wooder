@@ -2,18 +2,17 @@ section.product.m-furniture
     
     div.container
     
-        p.product__letter f
+        p.product__letter=furniture.letter
         
         p.product__num
             span .
         
         div.common-paragraph
-            h2.common-paragraph__title Furniture
+            h2.common-paragraph__title=furniture.title
             
-            p.common-paragraph__text.
-                Wooder utilizes materials otherwise left behind, rendered useless in their original intent. By creating new pieces made of reclaimed barnwood
+            p.common-paragraph__text=furniture.text
             
-            a.decor-link Learn more
+            a.decor-link=page.button
             
         div.product-img(data-decor="Furniture")
             img(src="images/furniture.jpg", alt="furniture image")

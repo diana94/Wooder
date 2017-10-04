@@ -6,6 +6,7 @@
     transition: all .2s ease-out
 
     &.is-active
+        min-height: 70px
         padding-top: 18px
         background-color: #010101
 
@@ -19,6 +20,9 @@
     &__info
         float: left
         margin-top: -2px
+
+        @media #{$XS}
+            display: none
 
         [class*='icon']
             margin-right: 40px
@@ -35,9 +39,12 @@
     .menu
         +absolute($top: $absolute-top, $left: $absolute-side)
 
-    &-settings,
+    &-setting,
     .menu
         transition: all .2s ease-out
+
+        @media #{$XS}
+            top: 31px
 
     .container
         padding-left: 365px
@@ -67,3 +74,7 @@
     .select-group
         float: left
         width: 60px
+
+        .select-options
+            li
+                text-shadow: -1px 0px 2px black, 0px 0px 1em #bea67c

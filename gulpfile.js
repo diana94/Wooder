@@ -8,7 +8,22 @@ var gulp       = require('gulp'),
     cssmin     = require('gulp-cssmin'),
     rename     = require('gulp-rename'),
     minify     = require('gulp-minify'),
+    swig       = require('gulp-swig'),
+    data       = require('gulp-data'),
+    fs         = require('fs'),
     sass       = require('gulp-sass');
+
+//json and pug
+gulp.task('json-data', function() {
+  return gulp.src('./dev/source/pages/index.pug')
+    .pipe(data(function(file) {
+        return JSON.parse(
+            fs.readFileSync('./language/en.json')
+          );
+    }))
+    .pipe(pug())
+    .pipe(gulp.dest('./dev/bundle'));
+});
 
 //sass
 gulp.task('sass', function () {
@@ -85,9 +100,9 @@ gulp.task('js-watch', function () {
         .pipe(connect.reload());
 });
 
-gulp.task('default', ['connect'], function () {
+gulp.task('default', ['connect','json-data'], function () {
     gulp.watch(['dev/source/**/*.sass', './dev/source/*.sass'], ['sass']);
-    gulp.watch(['dev/source/**/*.pug'], ['pug']);
+    gulp.watch(['dev/source/**/*.pug','./language/*.json'], ['json-data']);
     gulp.watch(['dev/source/cosmetic/*.css', 'dev/source/cosmetic/**/*.css'], ['css-concat']);
     gulp.watch(['dev/source/**/*.js'], ['js-concat']);
     gulp.watch(['dev/bundle/js/*.js'], ['js-compress','js-watch']);

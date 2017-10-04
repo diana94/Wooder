@@ -2,18 +2,17 @@ section.product.m-decor.m-reverse
     
     div.container
     
-        p.product__letter d
+        p.product__letter=decor.letter
         
         p.product__num
             span .
         
         div.common-paragraph
-            h2.common-paragraph__title Decor
+            h2.common-paragraph__title=decor.title
             
-            p.common-paragraph__text.
-                We make all types of wooden decor as per design given by Architect,Interior designer, contractor which is suitable your premises. 
+            p.common-paragraph__text=decor.text
             
-            a.decor-link Learn more
+            a.decor-link=page.button
             
         div.product-img(data-decor="Decor")
             img(src="images/decor.jpg", alt="decoration image")

@@ -4,23 +4,23 @@ section.hero
 
         div.hero-content
             div.hero__aside
-                p.hero__num 01
+                p.hero__num=hero.num
                 
-                div.hero-nav
-                    span.simple-button.hero-nav__item.is-active
-                    span.simple-button.hero-nav__item
-                    span.simple-button.hero-nav__item
-                    span.simple-button.hero-nav__item
+                div.hero-decor
+                    span.simple-button.hero-decor__item.is-active
+                    span.simple-button.hero-decor__item
+                    span.simple-button.hero-decor__item
+                    span.simple-button.hero-decor__item
             
-            h1.common-title.m-light Wooder
+            h1.common-title.m-light=hero.title
 
-            button.button.hero__button Learn more
+            button.button.hero__button=page.button
 
             button.hero-next(id="next-section")
                 i.icon-mouse
                 i.icon-arrow-down2
                     
-            p.hero__dscr Furniture & decor
+            p.hero__dscr=hero.dscr
 
     div.share
         button.simple-button.share__button
