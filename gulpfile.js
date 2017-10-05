@@ -1,17 +1,19 @@
 'use strict';
-var gulp       = require('gulp'),
-    pug        = require('gulp-pug'),
-    sourcemaps = require('gulp-sourcemaps'),
-    autoprefix = require('gulp-autoprefixer'),
-    connect    = require('gulp-connect'),
-    concat     = require('gulp-concat'),
-    cssmin     = require('gulp-cssmin'),
-    rename     = require('gulp-rename'),
-    minify     = require('gulp-minify'),
-    swig       = require('gulp-swig'),
-    data       = require('gulp-data'),
-    fs         = require('fs'),
-    sass       = require('gulp-sass');
+var gulp         = require('gulp'),
+    pug          = require('gulp-pug'),
+    sourcemaps   = require('gulp-sourcemaps'),
+    autoprefix   = require('gulp-autoprefixer'),
+    connect      = require('gulp-connect'),
+    concat       = require('gulp-concat'),
+    cssmin       = require('gulp-cssmin'),
+    rename       = require('gulp-rename'),
+    minify       = require('gulp-minify'),
+    swig         = require('gulp-swig'),
+    data         = require('gulp-data'),
+    fs           = require('fs'),
+    mmq          = require('gulp-merge-media-queries'),
+    styleInject  = require("gulp-style-inject"),
+    sass         = require('gulp-sass');
 
 //json and pug
 gulp.task('json-data', function() {
@@ -22,7 +24,14 @@ gulp.task('json-data', function() {
           );
     }))
     .pipe(pug())
-    .pipe(gulp.dest('./dev/bundle'));
+    .pipe(gulp.dest('./dev/source/pages/'));
+});
+
+//inline source
+gulp.task('css-inject', function() {
+  return gulp.src("./dev/source/pages/index.html")
+    .pipe(styleInject())
+    .pipe(gulp.dest("./dev/bundle"));
 });
 
 //sass
@@ -30,6 +39,9 @@ gulp.task('sass', function () {
     return gulp.src('./dev/source/*.sass')
         .pipe(sourcemaps.init())
         .pipe(sass())
+        .pipe(mmq({
+          log: true
+        }))
         .pipe(sourcemaps.write())
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('./dev/source/cosmetic'));
@@ -69,13 +81,6 @@ gulp.task('js-compress', function() {
     .pipe(gulp.dest('dev/bundle/js'))
 });
 
-//pug
-gulp.task('pug', function () {
-    return gulp.src('./dev/source/pages/*.pug')
-    .pipe(pug())
-    .pipe(gulp.dest('./dev/bundle/'));
-});
-
 //connect server
 gulp.task('connect', function() {
     connect.server({
@@ -102,7 +107,7 @@ gulp.task('js-watch', function () {
 
 gulp.task('default', ['connect','json-data'], function () {
     gulp.watch(['dev/source/**/*.sass', './dev/source/*.sass'], ['sass']);
-    gulp.watch(['dev/source/**/*.pug','./language/*.json'], ['json-data']);
+    gulp.watch(['dev/source/**/*.pug','./language/*.json'], ['json-data','css-inject']);
     gulp.watch(['dev/source/cosmetic/*.css', 'dev/source/cosmetic/**/*.css'], ['css-concat']);
     gulp.watch(['dev/source/**/*.js'], ['js-concat']);
     gulp.watch(['dev/bundle/js/*.js'], ['js-compress','js-watch']);
