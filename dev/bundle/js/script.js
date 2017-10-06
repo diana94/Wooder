@@ -3,16 +3,22 @@ function scrollShow(classEl) {
     var pointWindow = $(window).scrollTop() + $(window).outerHeight();
 
     if(pointWindow >= pointElement) {
+        console.log(classEl + ':' + pointElement);
+        console.log('scroll position:' + pointWindow);
         $(classEl).addClass('scroll-active');
     }
 }
-;;$(document).ready(function() {
+;$(document).ready(function() {
     scrollShow('.about .product__letter');
+    scrollShow('.about .common-paragraph__title');
+    scrollShow('.about .common-paragraph__text');
     $(window).scroll(function() {
         scrollShow('.about .product__letter');
+        scrollShow('.about .common-paragraph__title');
+        scrollShow('.about .common-paragraph__text');
     })
 })
-;$(document).ready(function() {
+;;$(document).ready(function() {
     $(window).scroll(function() {
         scrollShow('.m-furniture .product__letter');
         scrollShow('.m-furniture .common-paragraph__title');
@@ -22,7 +28,7 @@ function scrollShow(classEl) {
         scrollShow('.m-decor .common-paragraph__text');
     })
 })
-;$(document).ready(function() {
+;$(window).ready(function() {
     scrollShow('.video .common-paragraph__title');
     scrollShow('.video .common-paragraph__text');
     $(window).scroll(function() {
@@ -32,13 +38,9 @@ function scrollShow(classEl) {
 })
 ;$(document).ready( function(){
     scrollShow('.footer-logo');
-    scrollShow('.common-paragraph__title');
-    scrollShow('.common-paragraph__text');
-    
+
     $(window).scroll(function() {
         scrollShow('.footer-logo');
-        scrollShow('.common-paragraph__title');
-        scrollShow('.common-paragraph__text');
     })
 })
 ;$(document).ready(function() {
