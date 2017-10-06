@@ -106,7 +106,7 @@ gulp.task('js-watch', function () {
 });
 
 gulp.task('default', ['connect','json-data'], function () {
-    gulp.watch(['dev/source/**/*.sass', './dev/source/*.sass'], ['sass']);
+    gulp.watch(['dev/source/**/*.sass', './dev/source/*.sass'], ['sass','css-inject']);
     gulp.watch(['dev/source/**/*.pug','./language/*.json'], ['json-data','css-inject']);
     gulp.watch(['dev/source/cosmetic/*.css', 'dev/source/cosmetic/**/*.css'], ['css-concat']);
     gulp.watch(['dev/source/**/*.js'], ['js-concat']);
